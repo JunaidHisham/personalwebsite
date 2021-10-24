@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>form validation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create Account</h2>
+        </div>
+        <form action="" class="form" id="form">
+            <div class="form-control ">
+                <label>Username</label>
+                <input class="inputbox" type="text" placeholder="name" id="username">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="display: none; color: red;" id="error">Fill this Field</small>
+                <small style="display: none; color: red;" id="error1">atleast 4 charecter</small>
+            </div>
+
+            <div class="form-control ">
+                <label>Email</label>
+                <input class="inputbox" type="email" placeholder="Email" id="email">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="display: none; color: red;" id="error2">Fill this Field</small>
+                <small style="display: none; color: red;" id="error21">atleast 4 charecter</small>
+            </div>
+
+            <div class="form-control">
+                <label>Subject</label>
+                <input class="inputbox" type="text" placeholder="subject" id="subject">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="display: none; color: red;" id="error3">Fill this Field</small>
+                <small style="display: none; color: red;" id="error31">atleast 4 charecter</small>
+            </div>
+
+            <div class="form-control">
+                <label>Message</label>
+                <input class="inputbox" type="text" placeholder="message" id="message">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="display: none; color: red;" id="error4">Fill this Field</small>
+                <small style="display: none; color: red;" id="error41">atleast 4 charecter</small>
+            </div>
+            <button class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $("#username").blur(function(){
+            var text=$(this).val()
+            if(text.length ==0){
+                $("#error").show()
+            }else if(text.length<4){
+                $("#error1").show()
+            }else{
+                $("#error").hide()
+                $("#error1").hide()
+            }
+        })
+
+        $("#email").blur(function(){
+            var text=$(this).val()
+            if(text.length ==0){
+                $("#error2").show()
+            }else if(text.length<4){
+                $("#error21").show()
+            }else{
+                
+                $("#error2").hide()
+                $("#error21").hide()
+            }
+        })
+
+        $("#subject").blur(function(){
+            var text=$(this).val()
+            if(text.length ==0){
+                $("#error3").show()
+            }else if(text.length<4){
+                $("#error31").show()
+            }else{
+                $("#error3").hide()
+                $("#error31").hide()
+            }
+        })
+
+        $("#message").blur(function(){
+            var text=$(this).val()
+            if(text.length ==0){
+                $("#error4").show()
+            }else if(text.length<4){
+                $("#error41").show()
+            }else{
+                $("#error4").hide()
+                $("#error41").hide()
+            }
+        })
+    </script>
+
+    <script src="script.js"></script>
+    
+    <script src="https://kit.fontawesome.com/4f7f0e7aa6.js"></script>
+</body>
+</html>
